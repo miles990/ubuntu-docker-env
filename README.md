@@ -1,30 +1,35 @@
-# Deploy ubuntu 14.04 virtual machine via vagrant and install Docker via script
+# ubuntu-docker-env
+Deploy a ubuntu 14.04 virtual machine via vagrant and install docker via script
 
 #### Required
-- Virtualbox
-- Vagrant
+- [Virtualbox](https://www.virtualbox.org/)
+- [Vagrant](https://www.vagrantup.com/)
 
 #### Deploy ubuntu vm
 - Installation
+
 `
 vagrant up
 `
 
-- Connect
+- Connection vm
+
 `
 vagrant ssh
 `
 
 #### Install docker on vm
 - Installation
+
 `
 ./install_docker.sh
 `
 
-#### Install docker web ui
+#### Install docker web ui [shipyard](https://github.com/shipyard/shipyard)
 - Installation
-`
-./install_shipyard
 
 `
+./install_shipyard
+`
+
 - web ui [http://localhost:8080](http://localhost:8080)

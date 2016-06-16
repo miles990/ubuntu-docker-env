@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# https://docs.docker.com/engine/installation/linux/ubuntulinux/
+
 # ubuntu 14.04 install docker script
 sudo apt-get update
 sudo apt-get -y install apt-transport-https ca-certificates
