@@ -18,18 +18,9 @@ vagrant up
 vagrant ssh
 `
 
-#### Install docker on vm
-- Installation
+#### Run Golang Envirent
+```
+docker run golang -v ./go:/go sh
+```
 
-`
-./install_docker.sh
-`
-
-#### Install docker web ui [shipyard](https://github.com/shipyard/shipyard)
-- Installation
-
-`
-./install_shipyard
-`
-
-- web ui [http://localhost:8080](http://localhost:8080)
+- cadvisor [http://localhost:8080](http://localhost:8080)

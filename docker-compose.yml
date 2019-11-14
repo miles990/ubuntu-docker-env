@@ -1,0 +1,49 @@
+version: '2'
+
+services:
+
+  mongo:
+    restart: always
+    image: mongo:3.6.2
+    command: mongod --noprealloc --smallfiles --journal --dbpath /data/db --auth
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./service/mongodb/data:/data/db
+    ports:
+      - 27017:27017
+
+  rabbitmq:
+    restart: always
+    image: rabbitmq:3.6.5-management
+    # depends_on:
+      # - db-help
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./service/rabbitmq/data:/var/lib/rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  redis:
+    restart: always
+    image: redis:3.2.5
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASS}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./service/redis/data:/data
+    ports:
+      - 6379:6379
+
+  mysql:
+    restart: always
+    image: mysql:5.7.21
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./service/mysql/data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+       MYSQL_ROOT_PASSWORD: root
+       MYSQL_DATABASE: accounts
+       MYSQL_USER: dev
+       MYSQL_PASSWORD: dev

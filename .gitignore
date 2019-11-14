@@ -3,3 +3,6 @@
 .bash_history
 .viminfo
 .gitconfig
+
+service/
+go/
