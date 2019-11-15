@@ -18,7 +18,7 @@ vagrant up
 vagrant ssh
 `
 
-#### Run Golang Envirent
+#### Run Golang Environment
 ```
 cd /vagrant && docker run --rm -it -v $(pwd)/go:/go golang bash
 ```
