@@ -20,7 +20,7 @@ vagrant ssh
 
 #### Run Golang Envirent
 ```
-docker run golang -v ./go:/go sh
+cd /vagrant && docker run --rm -it -v $(pwd)/go:/go golang bash
 ```
 
 - cadvisor [http://localhost:8080](http://localhost:8080)
